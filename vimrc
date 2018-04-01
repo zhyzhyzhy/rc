@@ -8,9 +8,13 @@ Plug 'majutsushi/tagbar'
 ""Plug 'vim-ruby/vim-ruby'
 Plug 'shougo/neocomplete.vim'
 Plug 'ervandew/supertab'
-Plug 'scrooloose/syntastic'
+""Plug 'scrooloose/syntastic'
 Plug 'powerline/powerline'
 Plug 'artur-shaik/vim-javacomplete2'
+
+
+
+
 Plug 'kien/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 ""Plug 'YankRing.vim'
@@ -18,11 +22,11 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'plasticboy/vim-markdown'
 
-Plug 'sirver/ultisnips'
+"Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 "git
 "Plug 'tpope/vim-fugitive'
-
+""Plug '/Users/zhuyichen/git/codeForLearn/ijaas/vim'
 "js
 Plug 'pangloss/vim-javascript'
 
@@ -61,10 +65,10 @@ set backspace=2
 "如果文件有改变，自动读取
 set autoread
 "设置tab，长度为4，
-""set expandtab
 set tabstop=4
-set softtabstop=4
+""set softtabstop=4
 set shiftwidth=4
+set expandtab
 "hlsearch让Vim高亮文件中所有匹配项，incsearch则令Vim在你正打着搜索内容时就高亮下一个匹配项
 set hlsearch incsearch
 "把所有的数字都当成十进制
@@ -162,7 +166,7 @@ func Runcode()
 		map <F5> :!ruby %<CR>
 	endif
 	if &filetype == 'java'
-		map <F5> :!javac %;java %:r <CR>
+		map <F5> :!javac -cp /Users/zhuyichen/.m2/repository/* %;java %:r <CR>
 	endif
 	if &filetype == 'python'
 		map <F5> :!python %<CR>
@@ -406,4 +410,11 @@ nnoremap <leader>k <C-w>h
 nnoremap <leader>l <C-w>l
 inoremap <leader>p <Esc>o
 
-
+nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
+nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
+nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
+nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
+nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
